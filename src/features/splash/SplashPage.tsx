@@ -10,14 +10,14 @@ export function SplashPage() {
         type="button"
         className="splash-page__button"
         onClick={() => navigate('/on-boarding')}
-        aria-label="Entrar a Applergic"
+        aria-label="Entrar a Applergo"
       >
         <div className="splash-page__content">
-          <h1 className="splash-page__title">Applergic</h1>
+          <h1 className="splash-page__title">Applergo</h1>
 
           <div
             role="img"
-            aria-label="Applergic logo"
+            aria-label="Applergo logo"
             className="splash-page__mark"
           >
             <span aria-hidden="true">A</span>
