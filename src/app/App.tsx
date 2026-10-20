@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { OnboardingPlaceholder } from '../features/onboarding/OnboardingPlaceholder'
+import { OnboardingPage } from '../features/onboarding/OnboardingPage'
 import { SplashPage } from '../features/splash/SplashPage'
 
 export function App() {
@@ -7,7 +7,7 @@ export function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<SplashPage />} />
-        <Route path="/on-boarding" element={<OnboardingPlaceholder />} />
+        <Route path="/on-boarding" element={<OnboardingPage />} />
         <Route path="*" element={<SplashPage />} />
       </Routes>
     </BrowserRouter>
