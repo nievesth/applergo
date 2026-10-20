@@ -9,8 +9,8 @@ export function SplashPage() {
       <button
         type="button"
         className="splash-page__button"
-        onClick={() => navigate('/on-boarding')}
-        aria-label="Entrar a Applergo"
+        onClick={() => navigate('/')}
+        aria-label="Ir al inicio de Applergo"
       >
         <div className="splash-page__content">
           <h1 className="splash-page__title">Applergo</h1>
