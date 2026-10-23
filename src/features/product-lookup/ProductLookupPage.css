@@ -1,0 +1,330 @@
+.product-lookup {
+  --lookup-background: #faf8f3;
+  --lookup-surface: #ffffff;
+  --lookup-primary: #2e7d32;
+  --lookup-primary-dark: #1f4d36;
+  --lookup-earth: #d9c9a9;
+  --lookup-text: #2b2b2b;
+  --lookup-muted: #5c625b;
+  --lookup-warning: #6c4b12;
+
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 1.25rem 1rem 2.5rem;
+  background: var(--lookup-background);
+  color: var(--lookup-text);
+}
+
+.product-lookup__content {
+  display: grid;
+  width: min(100%, 52rem);
+  gap: 1.25rem;
+  margin: 0 auto;
+}
+
+.product-lookup__back {
+  justify-self: start;
+  min-height: 2.75rem;
+  align-content: center;
+  color: var(--lookup-primary-dark);
+  font-weight: 600;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.2em;
+}
+
+.product-lookup__back:focus-visible,
+.product-lookup__form button:focus-visible,
+.product-lookup__form input:focus-visible {
+  outline: 3px solid var(--lookup-primary);
+  outline-offset: 3px;
+}
+
+.product-lookup__header {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.product-lookup__header h1 {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1.15;
+}
+
+.product-lookup__header > p:last-child {
+  max-width: 38rem;
+  margin: 0;
+  color: var(--lookup-muted);
+  line-height: 1.6;
+}
+
+.product-lookup__eyebrow {
+  margin: 0;
+  color: var(--lookup-primary-dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.product-lookup__disclaimer {
+  padding: 0.9rem 1rem;
+  border-left: 3px solid var(--lookup-earth);
+  background: rgba(217, 201, 169, 0.22);
+  color: var(--lookup-warning);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.product-lookup__form {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.product-lookup__form label {
+  font-weight: 700;
+}
+
+.product-lookup__form-controls {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.product-lookup__form input {
+  width: 100%;
+  min-width: 0;
+  min-height: 3rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #817d70;
+  border-radius: 4px;
+  background: var(--lookup-surface);
+  color: var(--lookup-text);
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+}
+
+.product-lookup__form input[aria-invalid='true'] {
+  border-color: #9b2c22;
+}
+
+.product-lookup__form button {
+  min-height: 3rem;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--lookup-primary-dark);
+  border-radius: 4px;
+  background: var(--lookup-primary-dark);
+  color: var(--lookup-surface);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.product-lookup__form button:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+.product-lookup__help,
+.product-lookup__feedback {
+  min-height: 1.4em;
+  margin: 0;
+  color: var(--lookup-muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.product-lookup__feedback:empty {
+  min-height: 0;
+}
+
+.product-lookup__feedback[role='alert'] {
+  color: #8b241c;
+}
+
+.product-lookup__response {
+  min-width: 0;
+}
+
+.product-lookup__response > p {
+  margin: 0;
+  color: var(--lookup-muted);
+  line-height: 1.6;
+}
+
+.product-lookup__result {
+  display: grid;
+  min-width: 0;
+  gap: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(31, 77, 54, 0.2);
+}
+
+.product-lookup__overview {
+  display: grid;
+  min-width: 0;
+  gap: 1rem;
+}
+
+.product-lookup__result-header {
+  display: grid;
+  min-width: 0;
+  gap: 0.4rem;
+}
+
+.product-lookup__result-header h2 {
+  margin: 0;
+  color: var(--lookup-primary-dark);
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.product-lookup__brand {
+  margin: 0;
+  color: var(--lookup-muted);
+  overflow-wrap: anywhere;
+}
+
+.product-lookup__image {
+  display: grid;
+  width: min(100%, 18rem);
+  height: clamp(13rem, 36svh, 20rem);
+  min-width: 0;
+  min-height: 0;
+  place-items: center;
+  margin: 0;
+  padding: 0.75rem;
+  overflow: hidden;
+  border: 1px solid rgba(31, 77, 54, 0.12);
+  border-radius: 4px;
+  background: var(--lookup-surface);
+}
+
+.product-lookup__image img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 0;
+  min-height: 0;
+  object-fit: contain;
+  object-position: center;
+}
+
+.product-lookup__missing-image {
+  margin: 0;
+  color: var(--lookup-muted);
+  font-size: 0.9rem;
+}
+
+.product-lookup__details {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  border-top: 1px solid rgba(31, 77, 54, 0.16);
+}
+
+.product-lookup__declarations,
+.product-lookup__secondary {
+  min-width: 0;
+}
+
+.product-lookup__declarations h3,
+.product-lookup__secondary h3 {
+  margin: 0 0 0.75rem;
+  color: var(--lookup-primary-dark);
+  font-size: 1.05rem;
+}
+
+.product-lookup__declaration-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.product-field {
+  display: grid;
+  min-width: 0;
+  gap: 0.4rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(31, 77, 54, 0.16);
+}
+
+.product-field--declaration {
+  padding: 1rem;
+  border: 1px solid rgba(31, 77, 54, 0.16);
+  border-left: 3px solid var(--lookup-primary);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.product-field dt {
+  color: var(--lookup-primary-dark);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.product-field dd {
+  margin: 0;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.product-field__taxonomy,
+.product-field__inconsistency {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.product-field__taxonomy {
+  color: var(--lookup-muted);
+}
+
+.product-field__inconsistency {
+  color: var(--lookup-warning);
+  font-weight: 600;
+}
+
+@media (min-width: 42rem) {
+  .product-lookup {
+    padding: 2rem;
+  }
+
+  .product-lookup__content {
+    gap: 1.5rem;
+  }
+
+  .product-lookup__header h1 {
+    font-size: 2.5rem;
+  }
+
+  .product-lookup__form-controls {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .product-lookup__form button {
+    min-width: 11rem;
+  }
+
+  .product-lookup__result {
+    gap: 1.75rem;
+  }
+
+  .product-lookup__overview {
+    grid-template-columns: minmax(0, 1fr) minmax(12rem, 18rem);
+    align-items: center;
+    gap: clamp(1.5rem, 4vw, 3rem);
+  }
+
+  .product-lookup__image {
+    width: 100%;
+  }
+
+  .product-lookup__declaration-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product-lookup__details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1.5rem;
+  }
+}
