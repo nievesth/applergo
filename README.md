@@ -34,3 +34,6 @@ npm run build
 - The legacy Applergic project is preserved separately as a historical reference.
 - The modern project intentionally focuses on incremental migration, not full legacy feature reconstruction in one step.
 
+## CI and pull request previews
+
+See [CI and preview setup](docs/ci-and-previews.md) for automated checks, the one-time Cloudflare Pages connection, browser preview links, cleanup, security boundaries and free-plan limits.
