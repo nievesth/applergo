@@ -2,6 +2,7 @@ import barcodeIllustration from '../../assets/onboarding/01-escanea-productos.we
 import diaryIllustration from '../../assets/onboarding/02-diario-compras.webp'
 import emergencyIllustration from '../../assets/onboarding/03-contacto-emergencia.webp'
 import travelIllustration from '../../assets/onboarding/04-viaja-informacion.webp'
+import { Link } from 'react-router-dom'
 import './HomePage.css'
 
 const features = [
@@ -10,6 +11,7 @@ const features = [
     description: 'Escanea códigos de barras y consulta si un producto es apto para ti.',
     image: barcodeIllustration,
     imageAlt: 'Un teléfono escanea el código de barras de un producto alimenticio.',
+    to: '/product-lookup',
   },
   {
     title: 'Mi diario',
@@ -70,9 +72,15 @@ export function HomePage() {
                   <p className="home-feature__description">
                     {feature.description}
                   </p>
-                  <p className="home-feature__availability">
-                    No disponible aún
-                  </p>
+                  {feature.to ? (
+                    <Link className="home-feature__action" to={feature.to}>
+                      Buscar por código
+                    </Link>
+                  ) : (
+                    <p className="home-feature__availability">
+                      No disponible aún
+                    </p>
+                  )}
                 </div>
               </article>
             ))}

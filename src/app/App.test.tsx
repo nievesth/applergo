@@ -20,6 +20,7 @@ describe('Home screen', () => {
       {
         title: 'Escanear productos',
         imageAlt: 'Un teléfono escanea el código de barras de un producto alimenticio.',
+        linkName: 'Buscar por código',
       },
       {
         title: 'Mi diario',
@@ -41,9 +42,17 @@ describe('Home screen', () => {
     for (const feature of features) {
       const card = screen.getByRole('article', { name: feature.title })
       expect(within(card).getByRole('img', { name: feature.imageAlt })).toBeInTheDocument()
-      expect(within(card).getByText('No disponible aún')).toBeInTheDocument()
-      expect(within(card).queryByRole('link')).not.toBeInTheDocument()
       expect(within(card).queryByRole('button')).not.toBeInTheDocument()
+
+      if (feature.linkName) {
+        expect(
+          within(card).getByRole('link', { name: feature.linkName }),
+        ).toHaveAttribute('href', '/product-lookup')
+        expect(within(card).queryByText('No disponible aún')).not.toBeInTheDocument()
+      } else {
+        expect(within(card).getByText('No disponible aún')).toBeInTheDocument()
+        expect(within(card).queryByRole('link')).not.toBeInTheDocument()
+      }
     }
   })
 
@@ -56,6 +65,20 @@ describe('Home screen', () => {
       screen.getByRole('heading', { level: 1, name: '¿Qué necesitas hoy?' }),
     ).toBeInTheDocument()
     expect(screen.queryByRole('heading', { name: 'Introducción' })).not.toBeInTheDocument()
+  })
+})
+
+describe('Product lookup route', () => {
+  it('opens the lookup page from the scanner card', async () => {
+    const user = userEvent.setup()
+    render(<App />)
+
+    await user.click(screen.getByRole('link', { name: 'Buscar por código' }))
+
+    expect(window.location.pathname).toBe('/product-lookup')
+    expect(
+      screen.getByRole('heading', { level: 1, name: 'Buscar producto' }),
+    ).toBeInTheDocument()
   })
 })
 
